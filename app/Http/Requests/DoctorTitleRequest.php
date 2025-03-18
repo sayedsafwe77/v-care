@@ -27,7 +27,7 @@ class DoctorTitleRequest extends FormRequest
                 'required',
                 'min:3',
                 'max:50',
-                Rule::unique('doctor_titles','name')->ignore($this->route('title')->id, 'id')
+                Rule::unique('doctor_titles','name')->ignore($this->route('title')?->id, 'id')
             ]
         ];
     }
