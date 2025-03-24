@@ -7,7 +7,7 @@ use App\Http\Controllers\SpecialityController;
 use App\Http\Controllers\DoctorTitleController;
 use App\Http\Controllers\TestApiController;
 
-Route::get('/test',[TestApiController::class,'test']);
+Route::get('/test/{name}',[TestApiController::class,'test']);
 
 Route::get('/user', function (Request $request) {
     return $request->user();
