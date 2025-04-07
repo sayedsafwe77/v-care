@@ -58,8 +58,8 @@ class MakeRepositoryCommand extends Command
         $serviceContent = str_replace('{{ model }}', $model, $serviceStub);
         $filesystem->put($servicePath, $serviceContent);
         $this->info("Repository and interface created for model: {$model}");
-        $this->info("Interface Path: {$interfacePath}");
         $this->info("Repository Path: {$repositoryPath}");
+        $this->info("Interface Path: {$interfacePath}");
         $this->info("Service Path: {$servicePath}");
     }
 }

@@ -1,5 +1,5 @@
 <?php
-namespace App\Repository\interfaces;
+namespace App\Repositories\Interfaces;
 
 interface DoctorTitleInterface{
     function getAll();

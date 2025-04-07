@@ -2,7 +2,7 @@
 namespace App\Services;
 
 use App\Models\DoctorTitle;
-use App\Repository\interfaces\DoctorTitleInterface;
+use App\Repositories\Interfaces\DoctorTitleInterface;
 
 class DoctorTitleService{
     public function __construct(public DoctorTitleInterface $repository) {
