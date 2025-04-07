@@ -24,7 +24,6 @@ class SpecialityController extends Controller
 
     public function store(SpecialityRequest $request)
     {
-
         $speciality = Speciality::create($this->mapRequestToCulomns($request->validated()));
         return response()->json(['Speciality Data' => new SpecialityResource($speciality)], 201);
     }

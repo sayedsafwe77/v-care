@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\SpecialityController;
 use App\Http\Controllers\DoctorTitleController;
-
+use Illuminate\Support\Facades\Password;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -38,6 +38,7 @@ Route::controller(SpecialityController::class)->prefix('specialities')->group(fu
     Route::put('/{speciality}', 'edit');
     Route::delete('/{speciality}', 'destroy');
 });
+
 
 
 /*********   home page api's */

@@ -6,6 +6,7 @@ use App\ApiResponse;
 use App\Http\Requests\DoctorTitleRequest;
 use App\Http\Resources\DoctorTitleResource;
 use App\Models\DoctorTitle;
+use App\Services\DoctorTitleService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Response;
@@ -13,31 +14,27 @@ use Illuminate\Support\Facades\Response;
 class DoctorTitleController extends Controller
 {
     use ApiResponse;
-    function index() {
-        $titles = DoctorTitle::get();
-        // return Response::success(DoctorTitleResource::collection($titles));
-        // return response()->success(DoctorTitleResource::collection($titles));
-        return $this->successResponse(DoctorTitleResource::collection($titles));
-
-        // return response()->json(['data' => DoctorTitleResource::collection($titles)]);
+    public function __construct(public DoctorTitleService $service) {
     }
-    function show(DoctorTitle $title) {
-        return response()->json(['data' => new DoctorTitleResource($title)]);
+    function index() {
+        return $this->successResponse(DoctorTitleResource::collection($this->service->index()));
+    }
+    function show($id) {
+        return response()->json(['data' => new DoctorTitleResource($this->service->getById($id))]);
     }
     function store(DoctorTitleRequest $request) {
         try{
-            $title = DoctorTitle::create($this->mapRequestToColumns($request->validated()));
-            return $this->successResponse(data: new DoctorTitleResource($title),status: 204);
+            return $this->successResponse(data: new DoctorTitleResource($this->service->store($this->mapRequestToColumns($request->validated()))),status: 204);
         }catch(\Throwable $th){
             return $this->errorResponse($th->getMessage(),500);
         }
     }
-    function edit(DoctorTitle $title, DoctorTitleRequest $request) {
-        $title->update($this->mapRequestToColumns($request->validated()));
+    function edit($id, DoctorTitleRequest $request) {
+        $this->service->edit($id,$this->mapRequestToColumns($request->validated()));
         return response()->json([],204);
     }
-    function delete(DoctorTitle $title) {
-        $title->delete();
+    function delete($id) {
+        $this->service->delete($id);
         return response()->json([],204);
     }
     private function mapRequestToColumns($data)  {
