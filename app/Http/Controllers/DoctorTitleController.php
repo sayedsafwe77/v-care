@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\ApiResponse;
 use App\Http\Requests\DoctorTitleRequest;
 use App\Http\Resources\DoctorTitleResource;
+use App\Http\Traits\ApiResponseTrait;
 use App\Models\DoctorTitle;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -12,12 +13,13 @@ use Illuminate\Support\Facades\Response;
 
 class DoctorTitleController extends Controller
 {
-    use ApiResponse;
+    use ApiResponse,ApiResponseTrait;
     function index() {
         $titles = DoctorTitle::get();
         // return Response::success(DoctorTitleResource::collection($titles));
         // return response()->success(DoctorTitleResource::collection($titles));
-        return $this->successResponse(DoctorTitleResource::collection($titles));
+        // return $this->successResponse(DoctorTitleResource::collection($titles));
+        return $this->ApiResponse(200,'success',null,DoctorTitleResource::collection($titles));
 
         // return response()->json(['data' => DoctorTitleResource::collection($titles)]);
     }

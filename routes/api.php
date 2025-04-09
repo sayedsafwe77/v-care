@@ -7,10 +7,12 @@ use App\Http\Controllers\SpecialityController;
 use App\Http\Controllers\DoctorTitleController;
 use App\Http\Controllers\TestApiController;
 
+Route::get('/test/user',[TestApiController::class,'user']);
 Route::get('/test/{name}',[TestApiController::class,'test']);
 
 Route::get('/user', function (Request $request) {
     return $request->user();
+    
 })->middleware('auth:sanctum');
 
 
@@ -47,11 +49,11 @@ Route::controller(SpecialityController::class)->prefix('specialities')->group(fu
 //api to create account
 // search api for doctor (specialty_name,city_name)  or (doctor_name)
 // api to get all services
-// api for health insurance
+//// api for health insurance
 // api to get special offers (remaining_count)
 // api to return top specialties
-// api to ask a medical question 
-//api to book laboratory service
+//// api to ask a medical question 
+////api to book laboratory service
 // api to return social media links
 // api to download android
 // api to download ios

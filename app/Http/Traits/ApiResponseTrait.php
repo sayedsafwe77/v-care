@@ -15,6 +15,6 @@ trait ApiResponseTrait
             $array['data'] = $data;
        }
 
-       return response($array,200);
+     return response($array);
     }
 }
