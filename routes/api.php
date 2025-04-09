@@ -5,10 +5,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\SpecialityController;
 use App\Http\Controllers\DoctorTitleController;
+<<<<<<< HEAD
 use App\Http\Controllers\TestApiController;
 
 Route::get('/test/user',[TestApiController::class,'user']);
 Route::get('/test/{name}',[TestApiController::class,'test']);
+=======
+use Illuminate\Support\Facades\Password;
+>>>>>>> a3ea2a45ce435aa5db1333785b703954ad8913be
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -42,6 +46,7 @@ Route::controller(SpecialityController::class)->prefix('specialities')->group(fu
     Route::put('/{speciality}', 'edit');
     Route::delete('/{speciality}', 'destroy');
 });
+
 
 
 /*********   home page api's */

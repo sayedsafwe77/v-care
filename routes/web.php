@@ -10,5 +10,8 @@ Route::get('/', function () {
     // get user using user id from database
     return 'hello';
 });
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> a3ea2a45ce435aa5db1333785b703954ad8913be
