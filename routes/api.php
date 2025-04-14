@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\SpecialityController;
 use App\Http\Controllers\DoctorTitleController;
+use App\Http\Controllers\RegisteredUserController;
 use Illuminate\Support\Facades\Password;
 
 Route::get('/user', function (Request $request) {
@@ -12,7 +13,7 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 
-Route::controller(DoctorTitleController::class)->prefix('doctor_title')->group(function () {
+Route::controller(DoctorTitleController::class)->middleware('auth:sanctum')->prefix('doctor_title')->group(function () {
     Route::get('/', 'index');
     Route::get('/{title}', 'show');
     Route::post('/', 'store');
@@ -40,6 +41,7 @@ Route::controller(SpecialityController::class)->prefix('specialities')->group(fu
 });
 
 
+Route::post('register',[RegisteredUserController::class,'store']);
 
 /*********   home page api's */
 // search api for doctor (speciality_name,city_name)  or (doctor_name)

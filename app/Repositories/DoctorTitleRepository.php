@@ -2,7 +2,7 @@
 namespace App\Repositories;
 
 use App\Models\DoctorTitle;
-use App\Repository\interfaces\DoctorTitleInterface;
+use App\Repositories\Interfaces\DoctorTitleInterface;
 
 class DoctorTitleRepository implements DoctorTitleInterface{
     function getAll() {
