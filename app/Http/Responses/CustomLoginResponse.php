@@ -15,9 +15,20 @@ class CustomLoginResponse implements LoginResponseContract
      */
     public function toResponse($request)
     {
-        $user =$request->user() ?? $request->user;
-        $user->tokens()->where('name','mobile_token')->delete();
+        $user = $request->user() ?? $request->user;
+
+        $user->tokens()->where('name', 'mobile_token')->delete();
         $token = $user->createToken('mobile_token');
-        return response()->json(['user'=> new UserResource($user),'token' => $token->plainTextToken]);
+
+        $message = $user->hasVerifiedEmail()
+            ? 'Login successful.'
+            : 'Login successful, please verify your email.';
+
+        return response()->json([
+            'message' => $message,
+            'user' => new UserResource($user),
+            'token' => $token->plainTextToken
+        ]);
     }
+
 }
