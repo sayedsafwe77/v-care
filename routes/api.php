@@ -2,46 +2,83 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CityController;
+use App\Http\Controllers\ZoneController;
+use Illuminate\Support\Facades\Password;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\SpecialityController;
 use App\Http\Controllers\DoctorTitleController;
+use App\Http\Controllers\VerifyEmailController;
 use App\Http\Controllers\RegisteredUserController;
-use Illuminate\Support\Facades\Password;
+use Laravel\Fortify\Http\Controllers\NewPasswordController;
+use Laravel\Fortify\Http\Controllers\PasswordResetLinkController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
 
-Route::controller(DoctorTitleController::class)->middleware('auth:sanctum')->prefix('doctor_title')->group(function () {
-    Route::get('/', 'index');
-    Route::get('/{title}', 'show');
-    Route::post('/', 'store');
-    Route::put('/{title}', 'edit');
-    Route::delete('/{title}', 'delete');
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::controller(DoctorTitleController::class)->prefix('doctor_title')->group(function () {
+        Route::get('/', 'index');
+        Route::get('/{title}', 'show');
+        Route::post('/', 'store');
+        Route::put('/{title}', 'edit');
+        Route::delete('/{title}', 'delete');
+    });
+
+    Route::controller(CountryController::class)->prefix('countries')->group(function () {
+        Route::get('/', 'index');
+        Route::get('/{country}', 'show');
+        Route::post('/', 'store');
+        Route::put('/{country}', 'edit');
+        Route::delete('/{country}', 'destroy');
+    });
+
+    Route::controller(CityController::class)->prefix('city')->group(function(){
+        Route::get('/', 'index');
+        Route::get('/{city}', 'show');
+        Route::post('/', 'store');
+        Route::put('/{city}', 'update');
+        Route::delete('/{city}', 'delete');
+    });
+
+    Route::controller(ZoneController::class)->prefix('zone')->group(function(){
+        Route::get('/', 'index');
+        Route::get('/{zone}', 'show');
+        Route::post('/', 'store');
+        Route::put('/{zone}', 'update');
+        Route::delete('/{zone}', 'delete');
+    });
+
+
+
+    Route::controller(SpecialityController::class)->prefix('specialities')->group(function () {
+        Route::get('/', 'index');
+        Route::get('/{speciality}', 'show');
+        Route::post('/', 'store');
+        Route::put('/{speciality}', 'edit');
+        Route::delete('/{speciality}', 'destroy');
+    });
+
 });
 
 
-Route::controller(CountryController::class)->prefix('countries')->group(function () {
-    Route::get('/', 'index');
-    Route::get('/{country}', 'show');
-    Route::post('/', 'store');
-    Route::put('/{country}', 'edit');
-    Route::delete('/{country}', 'destroy');
-});
 
-
-
-Route::controller(SpecialityController::class)->prefix('specialities')->group(function () {
-    Route::get('/', 'index');
-    Route::get('/{speciality}', 'show');
-    Route::post('/', 'store');
-    Route::put('/{speciality}', 'edit');
-    Route::delete('/{speciality}', 'destroy');
-});
 
 
 Route::post('register',[RegisteredUserController::class,'store']);
+
+Route::post('/forgot-password', [PasswordResetLinkController::class, 'store']);
+
+Route::post('/reset-password', [NewPasswordController::class, 'store'])->name('password.update');
+
+Route::get('/email/verify/{id}/{hash}', VerifyEmailController::class)
+    ->middleware(['signed'])->name('verification.verify');
+
+
+
+
 
 /*********   home page api's */
 // search api for doctor (speciality_name,city_name)  or (doctor_name)

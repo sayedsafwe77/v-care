@@ -2,20 +2,26 @@
 
 namespace App\Providers;
 
+use App\Models\User;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use Laravel\Fortify\Fortify;
+use Illuminate\Support\Facades\Hash;
 use App\Actions\Fortify\CreateNewUser;
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Cache\RateLimiting\Limit;
 use App\Actions\Fortify\ResetUserPassword;
 use App\Actions\Fortify\UpdateUserPassword;
-use App\Actions\Fortify\UpdateUserProfileInformation;
 use App\Http\Responses\CustomLoginResponse;
-use App\Models\User;
-use Illuminate\Cache\RateLimiting\Limit;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\RateLimiter;
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Str;
 use Laravel\Fortify\Contracts\LoginResponse;
-use Laravel\Fortify\Fortify;
+use App\Http\Responses\CustomeVerifyEmailResponse;
+use Laravel\Fortify\Contracts\VerifyEmailResponse;
+use App\Http\Responses\CustomePasswordResetResponse;
+use Laravel\Fortify\Contracts\PasswordResetResponse;
+use App\Actions\Fortify\UpdateUserProfileInformation;
+use App\Http\Responses\CustomeFailedPasswordResetResponse;
+use Laravel\Fortify\Contracts\FailedPasswordResetResponse;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -57,5 +63,8 @@ class FortifyServiceProvider extends ServiceProvider
         });
 
         app()->singleton(LoginResponse::class,concrete: CustomLoginResponse::class);
+        app()->singleton(PasswordResetResponse::class, CustomePasswordResetResponse::class);
+        app()->singleton(FailedPasswordResetResponse::class, CustomeFailedPasswordResetResponse::class);
+        app()->singleton(VerifyEmailResponse::class, CustomeVerifyEmailResponse::class);
     }
 }
