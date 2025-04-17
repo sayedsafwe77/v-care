@@ -2,11 +2,13 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CityController;
+use App\Http\Controllers\ZoneController;
+use Illuminate\Support\Facades\Password;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\SpecialityController;
 use App\Http\Controllers\DoctorTitleController;
 use App\Http\Controllers\RegisteredUserController;
-use Illuminate\Support\Facades\Password;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -28,6 +30,22 @@ Route::controller(CountryController::class)->prefix('countries')->group(function
     Route::post('/', 'store');
     Route::put('/{country}', 'edit');
     Route::delete('/{country}', 'destroy');
+});
+
+Route::controller(CityController::class)->prefix('city')->group(function(){
+    Route::get('/', 'index');
+    Route::get('/{city}', 'show');
+    Route::post('/', 'store');
+    Route::put('/{city}', 'update');
+    Route::delete('/{city}', 'delete');
+});
+
+Route::controller(ZoneController::class)->prefix('zone')->group(function(){
+    Route::get('/', 'index');
+    Route::get('/{zone}', 'show');
+    Route::post('/', 'store');
+    Route::put('/{zone}', 'update');
+    Route::delete('/{zone}', 'delete');
 });
 
 
