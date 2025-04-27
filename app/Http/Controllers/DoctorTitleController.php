@@ -5,16 +5,14 @@ namespace App\Http\Controllers;
 use App\ApiResponse;
 use App\Http\Requests\DoctorTitleRequest;
 use App\Http\Resources\DoctorTitleResource;
+use App\Http\Traits\ApiResponseTrait;
 use App\Models\DoctorTitle;
 use App\Services\DoctorTitleService;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Response;
+
 
 class DoctorTitleController extends Controller
 {
-    use ApiResponse;
+    use ApiResponse,ApiResponseTrait;
     public function __construct(public DoctorTitleService $service) {
     }
     function index() {

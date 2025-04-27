@@ -7,9 +7,15 @@ use App\Http\Controllers\SpecialityController;
 use App\Http\Controllers\DoctorTitleController;
 use App\Http\Controllers\RegisteredUserController;
 use Illuminate\Support\Facades\Password;
+use App\Http\Controllers\TestApiController;
+
+Route::get('/test/user',[TestApiController::class,'user']);
+Route::get('/test/{name}',[TestApiController::class,'test']);
+
 
 Route::get('/user', function (Request $request) {
     return $request->user();
+    
 })->middleware('auth:sanctum');
 
 
@@ -44,11 +50,18 @@ Route::controller(SpecialityController::class)->prefix('specialities')->group(fu
 Route::post('register',[RegisteredUserController::class,'store']);
 
 /*********   home page api's */
-// search api for doctor (speciality_name,city_name)  or (doctor_name)
+//api to login 
+//api to create account
+// search api for doctor (specialty_name,city_name)  or (doctor_name)
 // api to get all services
+//// api for health insurance
 // api to get special offers (remaining_count)
-// api to return top specialities
+// api to return top specialties
+//// api to ask a medical question 
+////api to book laboratory service
 // api to return social media links
+// api to download android
+// api to download ios
 
 /*********   contact us page api's */
 // api to send contact
@@ -69,8 +82,55 @@ Route::post('register',[RegisteredUserController::class,'store']);
 
 /*********   doctors page api's */
 // api to get all doctors
-// api to get all specialities
-// api to get doctor filter count(title,gender,availibility,entity)
+// api to get all specialties
+// api to get doctor filter count(title,gender,availability,entity,price)
+// api to sort doctors by price (asc,desc)
+// api to get doctors by specialty 
+// api to go to a doctor information
+
+/********* Doctor information page */
+//api to get the doctor details 
+// api to get clinic details
+// api to get average rating for doctor, clinic, assistant, overall with count for every rating value with count for visitors.
+// api to get top six comments for the doctor with patient details.
+// api to make a booking.
+
+/*********   book now page api's */
+// api to get book now page with info(Doctor's details, select a day according to doctor's time)
+// api to get the mobile number key according to country.
+// api to get insurance dropdown options.
+// api to send patient details.
+
+/************ Ask a medical question */
+// api to get all the specialties 
+// api to send the submit the question
+
+/************ login page */
+//api for home page.
+//api for forget password
+//api to submit login
+//api to create an account
+
+/************ forget password page */
+//api for home page.
+//api to send OTP.
+//api to login page
+
+/************ OTP page */
+//api for home page.
+//api to reset password
+
+/************ reset password page */
+//api to reset new password
+
+
+/************ create an account page */
+//api for sign up
+//api to login page
+
+
+
+
 
 
 
