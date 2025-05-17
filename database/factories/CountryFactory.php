@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Faker\CityCountryProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,8 +17,9 @@ class CountryFactory extends Factory
      */
     public function definition(): array
     {
+        $countries = CityCountryProvider::countries();
         return [
-            'name' => fake()->country(),
+            'name' => fake()->unique()->randomElement($countries),
         ];
     }
 }

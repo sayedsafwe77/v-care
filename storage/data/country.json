@@ -1,0 +1,659 @@
+{
+    "countries": [
+        {
+            "name": "Egypt",
+            "cities": [
+                {
+                    "name": "Cairo",
+                    "zones": [
+                        {
+                            "name": "Heliopolis",
+                            "lat": 30.112,
+                            "long": 31.346
+                        },
+                        {
+                            "name": "Maadi",
+                            "lat": 29.96,
+                            "long": 31.261
+                        },
+                        {
+                            "name": "Zamalek",
+                            "lat": 30.066,
+                            "long": 31.215
+                        },
+                        {
+                            "name": "Nasr City",
+                            "lat": 30.056,
+                            "long": 31.33
+                        }
+                    ]
+                },
+                {
+                    "name": "Alexandria",
+                    "zones": [
+                        {
+                            "name": "Stanley",
+                            "lat": 31.24,
+                            "long": 29.963
+                        },
+                        {
+                            "name": "Sidi Gaber",
+                            "lat": 31.22,
+                            "long": 29.949
+                        },
+                        {
+                            "name": "Smouha",
+                            "lat": 31.209,
+                            "long": 29.943
+                        }
+                    ]
+                },
+                {
+                    "name": "Giza",
+                    "zones": [
+                        {
+                            "name": "Dokki",
+                            "lat": 30.038,
+                            "long": 31.211
+                        },
+                        {
+                            "name": "Mohandessin",
+                            "lat": 30.062,
+                            "long": 31.21
+                        },
+                        {
+                            "name": "Al Haram",
+                            "lat": 29.994,
+                            "long": 31.146
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "United States",
+            "cities": [
+                {
+                    "name": "New York",
+                    "zones": [
+                        {
+                            "name": "Manhattan",
+                            "lat": "40.7831",
+                            "long": "-73.9712"
+                        },
+                        {
+                            "name": "Brooklyn",
+                            "lat": "40.6782",
+                            "long": "-73.9442"
+                        },
+                        {
+                            "name": "Queens",
+                            "lat": "40.7282",
+                            "long": "-73.7949"
+                        }
+                    ]
+                },
+                {
+                    "name": "Los Angeles",
+                    "zones": [
+                        {
+                            "name": "Hollywood",
+                            "lat": "34.0980",
+                            "long": "118.3295"
+                        },
+                        {
+                            "name": "Beverly Hills",
+                            "lat": "34.0736",
+                            "long": "118.4004"
+                        },
+                        {
+                            "name": "Downtown LA",
+                            "lat": "34.0407",
+                            "long": "118.2468"
+                        }
+                    ]
+                },
+                {
+                    "name": "Chicago",
+                    "zones": [
+                        {
+                            "name": "Lincoln Park",
+                            "lat": "41.9214",
+                            "long": "87.6513"
+                        },
+                        {
+                            "name": "Hyde Park",
+                            "lat": "41.7943",
+                            "long": "87.5907"
+                        },
+                        {
+                            "name": "The Loop",
+                            "lat": "41.8837",
+                            "long": "87.6325"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Germany",
+            "cities": [
+                {
+                    "name": "Berlin",
+                    "zones": [
+                        {
+                            "name": "Mitte",
+                            "lat": "52.5200",
+                            "long": "13.4050"
+                        },
+                        {
+                            "name": "Kreuzberg",
+                            "lat": "52.4986",
+                            "long": "13.4033"
+                        },
+                        {
+                            "name": "Charlottenburg",
+                            "lat": "52.5167",
+                            "long": "13.3040"
+                        }
+                    ]
+                },
+                {
+                    "name": "Munich",
+                    "zones": [
+                        {
+                            "name": "Altstadt-Lehel",
+                            "lat": "48.1371",
+                            "long": "11.5754"
+                        },
+                        {
+                            "name": "Maxvorstadt",
+                            "lat": "48.1500",
+                            "long": "11.5675"
+                        },
+                        {
+                            "name": "Schwabing",
+                            "lat": "48.1667",
+                            "long": "11.5833"
+                        }
+                    ]
+                },
+                {
+                    "name": "Frankfurt",
+                    "zones": [
+                        {
+                            "name": "Innenstadt",
+                            "lat": "50.1109",
+                            "long": "8.6821"
+                        },
+                        {
+                            "name": "Sachsenhausen",
+                            "lat": "50.1000",
+                            "long": "8.6833"
+                        },
+                        {
+                            "name": "Bockenheim",
+                            "lat": "50.1200",
+                            "long": "8.6300"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "France",
+            "cities": [
+                {
+                    "name": "Paris",
+                    "zones": [
+                        {
+                            "name": "Le Marais",
+                            "lat": "48.8590",
+                            "long": "2.3622"
+                        },
+                        {
+                            "name": "Montmartre",
+                            "lat": "48.8867",
+                            "long": "2.3431"
+                        },
+                        {
+                            "name": "Latin Quarter",
+                            "lat": "48.8462",
+                            "long": "2.3449"
+                        }
+                    ]
+                },
+                {
+                    "name": "Lyon",
+                    "zones": [
+                        {
+                            "name": "Presqu'île",
+                            "lat": "45.7602",
+                            "long": "4.8357"
+                        },
+                        {
+                            "name": "Croix-Rousse",
+                            "lat": "45.7797",
+                            "long": "4.8272"
+                        },
+                        {
+                            "name": "Vieux Lyon",
+                            "lat": "45.7622",
+                            "long": "4.8276"
+                        }
+                    ]
+                },
+                {
+                    "name": "Marseille",
+                    "zones": [
+                        {
+                            "name": "Le Panier",
+                            "lat": "43.3027",
+                            "long": "5.3691"
+                        },
+                        {
+                            "name": "La Joliette",
+                            "lat": "43.3078",
+                            "long": "5.3615"
+                        },
+                        {
+                            "name": "Castellane",
+                            "lat": "43.2807",
+                            "long": "5.3799"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Brazil",
+            "cities": [
+                {
+                    "name": "São Paulo",
+                    "zones": [
+                        {
+                            "name": "Vila Mariana",
+                            "lat": "-23.5897",
+                            "long": "-46.6358"
+                        },
+                        {
+                            "name": "Pinheiros",
+                            "lat": "-23.5675",
+                            "long": "-46.6933"
+                        },
+                        {
+                            "name": "Moema",
+                            "lat": "-23.6015",
+                            "long": "-46.6658"
+                        }
+                    ]
+                },
+                {
+                    "name": "Rio de Janeiro",
+                    "zones": [
+                        {
+                            "name": "Copacabana",
+                            "lat": "-22.9711",
+                            "long": "-43.1822"
+                        },
+                        {
+                            "name": "Ipanema",
+                            "lat": "-22.9846",
+                            "long": "-43.2048"
+                        },
+                        {
+                            "name": "Barra da Tijuca",
+                            "lat": "-23.0004",
+                            "long": "-43.3659"
+                        }
+                    ]
+                },
+                {
+                    "name": "Brasília",
+                    "zones": [
+                        {
+                            "name": "Asa Norte",
+                            "lat": "-15.7439",
+                            "long": "-47.8949"
+                        },
+                        {
+                            "name": "Asa Sul",
+                            "lat": "-15.8140",
+                            "long": "-47.9102"
+                        },
+                        {
+                            "name": "Lago Sul",
+                            "lat": "-15.8489",
+                            "long": "-47.8818"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "India",
+            "cities": [
+                {
+                    "name": "Mumbai",
+                    "zones": [
+                        {
+                            "name": "Colaba",
+                            "lat": "18.9217",
+                            "long": "72.8326"
+                        },
+                        {
+                            "name": "Andheri",
+                            "lat": "19.1342",
+                            "long": "72.8500"
+                        },
+                        {
+                            "name": "Bandra",
+                            "lat": "19.0656",
+                            "long": "72.8450"
+                        }
+                    ]
+                },
+                {
+                    "name": "Delhi",
+                    "zones": [
+                        {
+                            "name": "Connaught Place",
+                            "lat": "28.6277",
+                            "long": "77.2197"
+                        },
+                        {
+                            "name": "South Extension",
+                            "lat": "28.5731",
+                            "long": "77.2188"
+                        },
+                        {
+                            "name": "Vasant Vihar",
+                            "lat": "28.5665",
+                            "long": "77.1369"
+                        }
+                    ]
+                },
+                {
+                    "name": "Bangalore",
+                    "zones": [
+                        {
+                            "name": "Koramangala",
+                            "lat": "12.9279",
+                            "long": "77.6307"
+                        },
+                        {
+                            "name": "Indiranagar",
+                            "lat": "12.9724",
+                            "long": "77.6407"
+                        },
+                        {
+                            "name": "MG Road",
+                            "lat": "12.9747",
+                            "long": "77.6079"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Canada",
+            "cities": [
+                {
+                    "name": "Toronto",
+                    "zones": [
+                        {
+                            "name": "Downtown Toronto",
+                            "lat": "43.6517",
+                            "long": "-79.3817"
+                        },
+                        {
+                            "name": "Yorkville",
+                            "lat": "43.6702",
+                            "long": "-79.3940"
+                        },
+                        {
+                            "name": "Scarborough",
+                            "lat": "43.7738",
+                            "long": "-79.2576"
+                        }
+                    ]
+                },
+                {
+                    "name": "Vancouver",
+                    "zones": [
+                        {
+                            "name": "Downtown Vancouver",
+                            "lat": "49.2827",
+                            "long": "-123.1207"
+                        },
+                        {
+                            "name": "Kitsilano",
+                            "lat": "49.2691",
+                            "long": "-123.1580"
+                        },
+                        {
+                            "name": "West End",
+                            "lat": "49.2850",
+                            "long": "-123.1367"
+                        }
+                    ]
+                },
+                {
+                    "name": "Montreal",
+                    "zones": [
+                        {
+                            "name": "Old Montreal",
+                            "lat": "45.5088",
+                            "long": "-73.5540"
+                        },
+                        {
+                            "name": "Plateau Mont-Royal",
+                            "lat": "45.5260",
+                            "long": "-73.5957"
+                        },
+                        {
+                            "name": "Downtown Montreal",
+                            "lat": "45.5017",
+                            "long": "-73.5673"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "China",
+            "cities": [
+                {
+                    "name": "Beijing",
+                    "zones": [
+                        {
+                            "name": "Chaoyang",
+                            "lat": "39.9290",
+                            "long": "116.4331"
+                        },
+                        {
+                            "name": "Haidian",
+                            "lat": "39.9925",
+                            "long": "116.3186"
+                        },
+                        {
+                            "name": "Dongcheng",
+                            "lat": "39.9289",
+                            "long": "116.4174"
+                        }
+                    ]
+                },
+                {
+                    "name": "Shanghai",
+                    "zones": [
+                        {
+                            "name": "Pudong",
+                            "lat": "31.2304",
+                            "long": "121.4737"
+                        },
+                        {
+                            "name": "Xuhui",
+                            "lat": "31.1962",
+                            "long": "121.4355"
+                        },
+                        {
+                            "name": "Jing'an",
+                            "lat": "31.2325",
+                            "long": "121.4480"
+                        }
+                    ]
+                },
+                {
+                    "name": "Guangzhou",
+                    "zones": [
+                        {
+                            "name": "Tianhe",
+                            "lat": "23.1291",
+                            "long": "113.2644"
+                        },
+                        {
+                            "name": "Yuexiu",
+                            "lat": "23.1273",
+                            "long": "113.2644"
+                        },
+                        {
+                            "name": "Haizhu",
+                            "lat": "23.0864",
+                            "long": "113.2755"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Japan",
+            "cities": [
+                {
+                    "name": "Tokyo",
+                    "zones": [
+                        {
+                            "name": "Shibuya",
+                            "lat": "35.6581",
+                            "long": "139.7016"
+                        },
+                        {
+                            "name": "Shinjuku",
+                            "lat": "35.6895",
+                            "long": "139.6917"
+                        },
+                        {
+                            "name": "Ginza",
+                            "lat": "35.6719",
+                            "long": "139.7649"
+                        }
+                    ]
+                },
+                {
+                    "name": "Osaka",
+                    "zones": [
+                        {
+                            "name": "Namba",
+                            "lat": "34.6683",
+                            "long": "135.5013"
+                        },
+                        {
+                            "name": "Umeda",
+                            "lat": "34.7054",
+                            "long": "135.4959"
+                        },
+                        {
+                            "name": "Dotonbori",
+                            "lat": "34.6681",
+                            "long": "135.5019"
+                        }
+                    ]
+                },
+                {
+                    "name": "Kyoto",
+                    "zones": [
+                        {
+                            "name": "Gion",
+                            "lat": "35.0028",
+                            "long": "135.7780"
+                        },
+                        {
+                            "name": "Arashiyama",
+                            "lat": "35.0131",
+                            "long": "135.6690"
+                        },
+                        {
+                            "name": "Fushimi",
+                            "lat": "34.8983",
+                            "long": "135.7850"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Australia",
+            "cities": [
+                {
+                    "name": "Sydney",
+                    "zones": [
+                        {
+                            "name": "Central Business District (CBD)",
+                            "lat": "-33.8688",
+                            "long": "151.2093"
+                        },
+                        {
+                            "name": "Bondi",
+                            "lat": "-33.8915",
+                            "long": "151.2770"
+                        },
+                        {
+                            "name": "Newtown",
+                            "lat": "-33.8977",
+                            "long": "151.1800"
+                        }
+                    ]
+                },
+                {
+                    "name": "Melbourne",
+                    "zones": [
+                        {
+                            "name": "Southbank",
+                            "lat": "-37.8260",
+                            "long": "144.9668"
+                        },
+                        {
+                            "name": "Fitzroy",
+                            "lat": "-37.7994",
+                            "long": "144.9782"
+                        },
+                        {
+                            "name": "St Kilda",
+                            "lat": "-37.8672",
+                            "long": "144.9756"
+                        }
+                    ]
+                },
+                {
+                    "name": "Brisbane",
+                    "zones": [
+                        {
+                            "name": "Fortitude Valley",
+                            "lat": "-27.4510",
+                            "long": "153.0374"
+                        },
+                        {
+                            "name": "South Brisbane",
+                            "lat": "-27.4714",
+                            "long": "153.0174"
+                        },
+                        {
+                            "name": "West End",
+                            "lat": "-27.4800",
+                            "long": "153.0107"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
