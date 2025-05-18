@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('facilities', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->enum('type', [0, 1]);
+            $table->enum('type', ['hospital', 'clinic']);
             $table->string('address');
             $table->string('address_link');
             $table->string('phone_number')->nullable();

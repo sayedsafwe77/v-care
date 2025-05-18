@@ -1,12 +1,14 @@
 <?php
 
+use App\Models\Facility;
+use App\Models\Zone;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    // read session
-    // get session details from database
-    // get user using user id from database
-    return view('welcome');
+   $facility = Facility::whereHas('specialties')->get();
+   $facility = DB::table(table: 'facilities')->join('facility_specialties','facilities.id','=','facility_specialties.facility_id')->get();
+    return '';
 });

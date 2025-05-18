@@ -2,15 +2,23 @@
 
 namespace Database\Seeders;
 
+use App\Models\Facility;
 use Illuminate\Database\Seeder;
 
-use App\Models\FacilitySpecialities;
-
+use App\Models\Specialty;
 
 class FacilitySpecialitiesSeeder extends Seeder
 {
     public function run(): void
     {
-        FacilitySpecialities::factory()->count(10)->create();
+        $specialties = Specialty::all();
+
+        Facility::all()->each(function ($facility) use ($specialties) {
+
+
+            $facility->specialties()->sync(
+                $specialties->random(rand(3, 6))->pluck('id')->toArray()
+            );
+        });
     }
 }

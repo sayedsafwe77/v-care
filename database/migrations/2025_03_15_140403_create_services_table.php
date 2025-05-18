@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->string('name',100);
-            $table->foreignId('speciality_id')->nullable()->constrained()->nullOnDelete();
+            $table->foreignId('specialty_id')->nullable()->constrained()->nullOnDelete();
             $table->timestamps();
         });
     }

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\SpecialityController;
 use App\Http\Controllers\DoctorTitleController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RegisteredUserController;
 use Illuminate\Support\Facades\Password;
 
@@ -43,12 +44,23 @@ Route::controller(SpecialityController::class)->prefix('specialities')->group(fu
 
 Route::post('register',[RegisteredUserController::class,'store']);
 
+Route::controller(HomeController::class)->prefix('home')->group(function () {
+    Route::get('doctors', 'searchDoctors'); // Accepts speciality_name, city_name, or doctor_name
+    Route::get('services', 'getAllServices');
+    Route::get('special-offers', 'getSpecialOffers'); // filter by remaining_count
+    Route::get('top-specialities', 'getTopSpecialities');
+    Route::get('social-links', 'getSocialLinks');
+});
+
+
 /*********   home page api's */
 // search api for doctor (speciality_name,city_name)  or (doctor_name)
 // api to get all services
 // api to get special offers (remaining_count)
 // api to return top specialities
 // api to return social media links
+
+// *********   home page api's
 
 /*********   contact us page api's */
 // api to send contact

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->enum('gender',['male','female']);
             $table->string('description');
             $table->string('question');
-            $table->foreignId('speciality_id')->nullable()->constrained()->nullOnDelete();
+            $table->foreignId('specialty_id')->nullable()->constrained()->nullOnDelete();
             $table->timestamps();
         });
     }

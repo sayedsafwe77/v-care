@@ -13,9 +13,8 @@ return new class extends Migration
     {
         Schema::create('facility_working_days', function (Blueprint $table) {
             $table->id();
-            $table->enum('day',[0,1,2,3,4,5,6]);
+            $table->unsignedTinyInteger('day');
             $table->foreignId('facility_id')->constrained()->cascadeOnDelete();
-
             $table->timestamps();
         });
     }

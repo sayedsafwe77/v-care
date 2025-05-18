@@ -15,7 +15,7 @@ use App\Models\Country;
 use App\Models\Zone;
 use Illuminate\Support\Facades\DB;
 
-class CitiesSeeder extends Seeder
+class CitySeeder extends Seeder
 {
     public function run(): void
     {

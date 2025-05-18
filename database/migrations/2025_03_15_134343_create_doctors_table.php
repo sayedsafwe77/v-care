@@ -21,7 +21,7 @@ return new class extends Migration
             $table->text('about')->nullable();
             $table->integer('experience_years')->default(0);
             $table->foreignId('doctor_title_id')->nullable()->constrained()->nullOnDelete();
-            $table->foreignId('speciality_id')->nullable()->constrained('specialities')->nullOnDelete();
+            $table->foreignId('specialty_id')->nullable()->constrained('specialties')->nullOnDelete();
             $table->decimal('fees', 10, 2)->default(0);
             $table->decimal('rate', 2, 1)->default(0);
             $table->integer('waiting_time')->default(0);
